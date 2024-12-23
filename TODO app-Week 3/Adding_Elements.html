@@ -10,26 +10,30 @@
 
 <body>
   <h1>Todo list</h1>
-  <div>
-    <div id="todo-1" style="display: flex";>
+  <div id="todos">
+    <div id="todo-1">
       <h4>1. Take class</h4>
       <button onclick="deleteTodo(1)">delete</button>
     </div>
-    <div id="todo-2" style="display: flex">
+    <div id="todo-2">
       <h4>2. Go out to eat</h4>
       <button onclick="deleteTodo(2)">delete</button>
     </div>
   </div>
   <div>
-    <input type="text"></input>
-    <button>Add Todo</button>
+    <input id="inp" type="text"></input>
+    <button onclick="addTodo()">Add Todo</button>
   </div>
 </body>
 
 <script>
-  function deleteTodo(index) {
-    const element = document.getElementById("todo-" + index);
-    element.parentNode.removeChild(element);
+  function addTodo() {
+    const inputEl = document.getElementById("inp");
+    const textNode = document.createElement("div");
+    textNode.innerHTML = inputEl.value;
+    const parentEl = document.getElementById("todos");
+    parentEl.appendChild(textNode);
+
   }
 </script>
 
