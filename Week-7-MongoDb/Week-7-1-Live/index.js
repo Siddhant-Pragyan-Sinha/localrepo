@@ -10,7 +10,7 @@ const { auth, JWT_SECRET } = require("./auth");
 const jwt = require("jsonwebtoken");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://Siddhant-Pragyan-Sinha:Harsh280204@cluster0.8gjzp.mongodb.net/todo-app-database")
+mongoose.connect("mongodb+srv://<username>:<password>@cluster0.8gjzp.mongodb.net/todo-app-database")
 
 
 
