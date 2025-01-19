@@ -1,28 +1,28 @@
-import { useState, useEffect } from 'react';
-import './App.css'
-import { useFetch } from './hooks/useFetch';
+import { useRef, useState, useEffect } from 'react';
+
+function useDebounce(originalFn) {
+  const currentClock = useRef();
+
+  const fn = () => {
+    clearTimeout(currentClock.current);
+    currentClock.current = setTimeout(originalFn, 200);
+  };
+
+  return fn;
+}
 
 function App() {
-  const [ currentPost, setCurrentPost ] = useState(1);
-  const { FinalData, loading} = useFetch("https://jsonplaceholder.typicode.com/posts/" + currentPost);
+  function sendDataToBackend() {
+  
+    fetch('api.amazon.com/search/');
 
-  if(loading){
-    return (<div>
-      Loading...
-      </div>)
-    
   }
-
-
-
+  const debouncedFn = useDebounce(sendDataToBackend);
   return (
-    <div>
-      <button onClick={() => setCurrentPost(1)}>1</button>
-      <button onClick={() => setCurrentPost(2)}>2</button>
-      <button onClick={() => setCurrentPost(3)}>3</button>
-      {JSON.stringify(FinalData)}
-    </div>
-  )
+    <>
+      <input type="text" onChange={debouncedFn}></input>
+    </>
+  );
 }
 
 export default App;
