@@ -97,7 +97,7 @@ app.post("/api/v1/brain/share", userMiddleware, async (req, res) => {
         await LinkModel.create({ userId: req.userId, hash });
         res.json({ hash }); // Send new hash in the response.
     } else {
-        // Remove the shareable link if share is false.mongodb+srv://Siddhant-Pragyan-Sinha:Harsh_280204@second-brain.8gjzp.mongodb.net/?authSource=admin
+        // Remove the shareable link if share is false.
         await LinkModel.deleteOne({ userId: req.userId });
         res.json({ message: "Removed link" }); // Send success response.
     }

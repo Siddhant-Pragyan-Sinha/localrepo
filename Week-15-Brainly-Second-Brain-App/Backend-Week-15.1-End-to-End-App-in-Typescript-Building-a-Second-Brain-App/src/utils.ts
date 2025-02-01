@@ -1,7 +1,7 @@
 // Exporting a function named `random` that generates a random string of a given length.
 export function random(len: number) {
     // Define a string containing possible characters for the random string.
-    let options = "erdctfbghujmrdtfbghunjmrxctfvygbhun";
+    let options = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let length = options.length;
 
     // Initialize an empty string to store the result.
