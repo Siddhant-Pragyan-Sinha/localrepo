@@ -79,3 +79,27 @@ After completing these steps, you can start writing TypeScript code in the `src`
 npx tsc
 ```
 The compiled JavaScript files will be placed in the `dist` folder as per the `tsconfig.json` configuration.
+## Directory structure:
+```
+└── Week-15-Brainly-Second-Brain-App/
+    ├── Backend-Week-15.1-End-to-End-App-in-Typescript-Building-a-Second-Brain-App/
+    │   ├── readme.md
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   ├── tsconfig.json
+    │   ├── tsconfig.tsbuildinfo
+    │   ├── .gitignore
+    │   ├── dist/
+    │   │   ├── config.js
+    │   │   ├── db.js
+    │   │   ├── index.js
+    │   │   ├── middleware.js
+    │   │   └── utils.js
+    │   └── src/
+    │       ├── config.ts
+    │       ├── db.ts
+    │       ├── index.ts
+    │       ├── middleware.ts
+    │       ├── override.d.ts
+    │       └── utils.ts
+```

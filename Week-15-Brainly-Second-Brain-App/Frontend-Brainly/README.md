@@ -47,4 +47,51 @@ export default tseslint.config({
     ...react.configs['jsx-runtime'].rules,
   },
 })
+
+└── Frontend-Brainly/
+        ├── README.md
+        ├── eslint.config.js
+        ├── index.html
+        ├── package-lock.json
+        ├── package.json
+        ├── postcss.config.js
+        ├── tailwind.config.js
+        ├── tsconfig.app.json
+        ├── tsconfig.json
+        ├── tsconfig.node.json
+        ├── vite.config.ts
+        ├── .env.development
+        ├── .gitignore
+        ├── public/
+        └── src/
+            ├── App.tsx
+            ├── config.ts
+            ├── index.css
+            ├── main.tsx
+            ├── vite-env.d.ts
+            ├── assets/
+            ├── components/
+            │   ├── Button.tsx
+            │   ├── Card.tsx
+            │   ├── CreateContentModal.tsx
+            │   ├── Input.tsx
+            │   ├── Sidebar.tsx
+            │   └── SidebarItem.tsx
+            ├── hooks/
+            │   └── useContent.tsx
+            ├── icons/
+            │   ├── CrossIcon.tsx
+            │   ├── DiscordIcon.tsx
+            │   ├── InstagramIcon.tsx
+            │   ├── Logo.tsx
+            │   ├── PlusIcon.tsx
+            │   ├── ShareIcon.tsx
+            │   ├── TwitterIcon.tsx
+            │   └── YoutubeIcon.tsx
+            └── pages/
+                ├── ErrorPage.tsx
+                ├── Signin.tsx
+                ├── Signup.tsx
+                └── dashboard.tsx
+
 ```
