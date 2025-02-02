@@ -18,7 +18,7 @@ const variantClasses = {
 };
 
 // Default CSS classes for all buttons
-const defaultStyles = "px-4 py-2 rounded-md font-light flex items-center";      //items-center is for vertically allignment of the item to be center
+const defaultStyles = "px-4 py-2 rounded-md font-normal flex items-center";      //items-center is for vertically allignment of the item to be center
 
 // The Button functional component
 export function Button({ variant, text, startIcon, onClick, fullWidth, loading }: ButtonProps) {

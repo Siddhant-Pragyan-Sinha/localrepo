@@ -1,3 +1,5 @@
+import { DiscordIcon } from "../icons/DiscordIcon";
+import { InstagramIcon } from "../icons/InstagramIcon";
 import { Logo } from "../icons/Logo";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { YoutubeIcon } from "../icons/YoutubeIcon";
@@ -13,7 +15,9 @@ export function Sidebar() {
         </div>
         <div className="pt-8 pl-4">
             <SidebarItem text="Twitter" icon={<TwitterIcon />} />
+            <SidebarItem text="Instagram" icon={<InstagramIcon />} />
             <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
+            <SidebarItem text="Discord" icon={<DiscordIcon />} />
         </div>
     </div>
 }

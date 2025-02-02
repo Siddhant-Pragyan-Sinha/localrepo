@@ -1,8 +1,14 @@
 // Importing the required modules and functions from Mongoose
+import dotenv from "dotenv";
 import mongoose, { model, Schema } from "mongoose";
+import { BACKEND_URI } from "./config";
+
+
 
 // Connecting to the MongoDB database using a connection string
-mongoose.connect("mongodb://localhost:27017/Second_Brain");
+mongoose.connect(BACKEND_URI)
+  .then(() => console.log("Connected to DB"))
+  .catch(err => console.error("DB connection failed:", err));
 
                             // Defining a schema for the 'User' collection
                            // Each user will have a unique 'username' and a 'password'

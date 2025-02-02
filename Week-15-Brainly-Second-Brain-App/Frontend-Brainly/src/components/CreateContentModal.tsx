@@ -8,7 +8,9 @@ import axios from "axios"; // Importing axios for HTTP requests
 // Enum to represent different types of content
 enum ContentType {
     Youtube = "youtube",
-    Twitter = "twitter"
+    Twitter = "twitter",
+    Discord = "discord",
+    Instagram = "instagram"
 }
 
 // Interface for the props passed to the CreateContentModal component
@@ -81,6 +83,18 @@ export function CreateContentModal({ open, onClose }: CreateContentModalProps) {
                                             text="Twitter"
                                             variant={type === ContentType.Twitter ? "primary" : "secondary"}
                                             onClick={() => setType(ContentType.Twitter)}
+                                        />
+                                        {/* Button to select Discord type */}
+                                        <Button
+                                            text="Discord"
+                                            variant={type === ContentType.Discord ? "primary" : "secondary"}
+                                            onClick={() => setType(ContentType.Discord)}
+                                        />
+                                        {/* Button to select Instagram type */}
+                                        <Button
+                                            text="Instagram"
+                                            variant={type === ContentType.Instagram ? "primary" : "secondary"}
+                                            onClick={() => setType(ContentType.Instagram)}
                                         />
                                     </div>
                                 </div>
