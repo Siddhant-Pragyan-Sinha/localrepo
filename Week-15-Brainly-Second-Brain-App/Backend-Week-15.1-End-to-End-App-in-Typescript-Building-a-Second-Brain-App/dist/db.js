@@ -34,12 +34,11 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkModel = exports.ContentModel = exports.UserModel = void 0;
+// Importing the required modules and functions from Mongoose
 const mongoose_1 = __importStar(require("mongoose"));
 const config_1 = require("./config");
 // Connecting to the MongoDB database using a connection string
-mongoose_1.default.connect(config_1.BACKEND_URI)
-    .then(() => console.log("Connected to DB"))
-    .catch(err => console.error("DB connection failed:", err));
+mongoose_1.default.connect(config_1.BACKEND_URL);
 // Defining a schema for the 'User' collection
 // Each user will have a unique 'username' and a 'password'
 const UserSchema = new mongoose_1.Schema({

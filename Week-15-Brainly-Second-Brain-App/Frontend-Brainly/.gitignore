@@ -26,4 +26,4 @@ dist-ssr
 
 # Configuration files
 config.ts
-.env
+.env.production

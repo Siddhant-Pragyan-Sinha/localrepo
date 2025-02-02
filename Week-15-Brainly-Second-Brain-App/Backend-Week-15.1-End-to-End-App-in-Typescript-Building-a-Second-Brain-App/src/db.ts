@@ -1,14 +1,10 @@
 // Importing the required modules and functions from Mongoose
-import dotenv from "dotenv";
 import mongoose, { model, Schema } from "mongoose";
-import { BACKEND_URI } from "./config";
-
-
+import { BACKEND_URL } from "./config";
 
 // Connecting to the MongoDB database using a connection string
-mongoose.connect(BACKEND_URI)
-  .then(() => console.log("Connected to DB"))
-  .catch(err => console.error("DB connection failed:", err));
+mongoose.connect(BACKEND_URL);
+console.log("Connected to MongoDB");
 
                             // Defining a schema for the 'User' collection
                            // Each user will have a unique 'username' and a 'password'

@@ -3,16 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BACKEND_URI = exports.JWT_SECRET = void 0;
+exports.BACKEND_URL = exports.JWT_SECRET = exports.MONGODB_URI = void 0;
 // config.ts
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
-// Validate critical environment variables
-if (!process.env.BACKEND_URI) {
+const path_1 = __importDefault(require("path"));
+// Load .env.development or .env.production based on NODE_ENV
+const envPath = `.env.${process.env.NODE_ENV || "development"}`;
+dotenv_1.default.config({ path: path_1.default.resolve(process.cwd(), envPath) });
+// Validate environment variables
+if (!process.env.BACKEND_URL) {
     throw new Error("Missing MONGODB_URI environment variable");
 }
 if (!process.env.JWT_SECRET_KEY) {
     throw new Error("Missing JWT_SECRET_KEY environment variable");
 }
+exports.MONGODB_URI = process.env.MONGODB_URI;
 exports.JWT_SECRET = process.env.JWT_SECRET_KEY;
-exports.BACKEND_URI = process.env.BACKEND_URI;
+exports.BACKEND_URL = process.env.BACKEND_URL;

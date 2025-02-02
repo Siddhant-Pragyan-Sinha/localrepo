@@ -14,7 +14,7 @@ export function Dashboard() {
   // State to manage the modal visibility
   const [modalOpen, setModalOpen] = useState(false);
   // Custom hook to fetch content and refresh the content list
-  const { contents, refresh } = useContent();
+  const {contents, refresh} = useContent();
 
   // useEffect hook to refresh the content whenever the modalOpen state changes
   useEffect(() => {
@@ -44,8 +44,12 @@ export function Dashboard() {
                   }
               });
               // Constructing the share URL and alerting the user with the link
-              const shareUrl = `http://localhost:5173/share/${response.data.hash}`;
-              alert(shareUrl);
+              if (response.data?.hash) {
+                const shareUrl = `${window.location.origin}/share/${response.data.hash}`;
+                alert(shareUrl);
+              } else {
+                alert("Failed to generate shareable link.");
+              }
           }} variant="secondary" text="Share brain" startIcon={<ShareIcon />} />
         </div>
 
