@@ -54,11 +54,11 @@ const ContentSchema = new mongoose_1.Schema({
     title: String, // Title of the content
     Link: String, // URL or link to the content
     tags: [{ type: mongoose_1.default.Types.ObjectId, ref: "tag" }], // Array of tag IDs, referencing the 'tag' collection
-    userId: [{
-            type: mongoose_1.default.Types.ObjectId,
-            ref: "User",
-            required: true // The 'userId' field is mandatory to link content to a user
-        }],
+    userId: {
+        type: mongoose_1.default.Types.ObjectId,
+        ref: "User",
+        required: true // The 'userId' field is mandatory to link content to a user
+    },
 });
 // Creating a model for the 'Content' collection to interact with the database
 exports.ContentModel = (0, mongoose_1.model)("Content", ContentSchema);

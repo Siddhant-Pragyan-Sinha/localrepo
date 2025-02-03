@@ -90,12 +90,20 @@ The compiled JavaScript files will be placed in the `dist` folder as per the `ts
     │   ├── tsconfig.tsbuildinfo
     │   ├── .gitignore
     │   ├── dist/
+    │   │   ├── routes/
+    │   │   │   ├── auth.js
+    │   │   │   ├── content.js
+    │   │   │   └── share.js
     │   │   ├── config.js
     │   │   ├── db.js
     │   │   ├── index.js
     │   │   ├── middleware.js
     │   │   └── utils.js
     │   └── src/
+    │       ├── routes
+    │       │   ├── auth.ts
+    │       │   ├── content.ts
+    │       │   ├── share.ts
     │       ├── config.ts
     │       ├── db.ts
     │       ├── index.ts
