@@ -1,9 +1,9 @@
 // Importing the required modules and functions from Mongoose
 import mongoose, { model, Schema } from "mongoose";
-import { BACKEND_URL } from "./config";
+import { MONGO_URI } from "./config";
 
 // Connecting to the MongoDB database using a connection string
-mongoose.connect(BACKEND_URL);
+mongoose.connect(MONGO_URI);
 console.log("Connected to MongoDB");
 
                             // Defining a schema for the 'User' collection

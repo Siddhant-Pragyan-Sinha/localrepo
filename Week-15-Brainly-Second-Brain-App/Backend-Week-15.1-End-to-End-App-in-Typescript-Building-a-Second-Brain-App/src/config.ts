@@ -7,7 +7,7 @@ const envPath = `.env.${process.env.NODE_ENV || "development"}`;
 dotenv.config({ path: path.resolve(process.cwd(), envPath) });
 
 // Validate environment variables
-if (!process.env.BACKEND_URL) {
+if (!process.env.MONGO_URI) {
   throw new Error("Missing MONGODB_URI environment variable");
 }
 if (!process.env.JWT_SECRET_KEY) {
@@ -16,4 +16,4 @@ if (!process.env.JWT_SECRET_KEY) {
 
 export const MONGODB_URI = process.env.MONGODB_URI;
 export const JWT_SECRET = process.env.JWT_SECRET_KEY;
-export const BACKEND_URL = process.env.BACKEND_URL;
+export const MONGO_URI = process.env.MONGO_URI;

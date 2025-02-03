@@ -38,7 +38,8 @@ exports.LinkModel = exports.ContentModel = exports.UserModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const config_1 = require("./config");
 // Connecting to the MongoDB database using a connection string
-mongoose_1.default.connect(config_1.BACKEND_URL);
+mongoose_1.default.connect(config_1.MONGO_URI);
+console.log("Connected to MongoDB");
 // Defining a schema for the 'User' collection
 // Each user will have a unique 'username' and a 'password'
 const UserSchema = new mongoose_1.Schema({
