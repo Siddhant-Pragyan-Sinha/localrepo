@@ -129,6 +129,6 @@ app.get("/api/v1/brain/:shareLink", (req, res) => __awaiter(void 0, void 0, void
     }); // Send user and content details in response.
 }));
 // Start the server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(config_1.PORT, () => {
+    console.log(`Server is running on port ${config_1.PORT}`);
 });

@@ -2,7 +2,7 @@ import express from "express";
 import { random } from "./utils";
 import jwt from "jsonwebtoken";
 import { ContentModel, LinkModel, UserModel } from "./db";
-import { JWT_SECRET } from "./config";
+import { JWT_SECRET, PORT } from "./config";
 import { userMiddleware } from "./middleware";
 import  cors  from "cors";
 
@@ -130,6 +130,6 @@ app.get("/api/v1/brain/:shareLink", async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });

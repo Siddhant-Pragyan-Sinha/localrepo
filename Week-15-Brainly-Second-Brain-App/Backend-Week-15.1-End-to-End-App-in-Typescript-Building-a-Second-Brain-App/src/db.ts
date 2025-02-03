@@ -22,11 +22,11 @@ const ContentSchema = new Schema({
     title: String,                          // Title of the content
     Link: String,                           // URL or link to the content
     tags: [{ type: mongoose.Types.ObjectId, ref: "tag" }], // Array of tag IDs, referencing the 'tag' collection
-    userId: [{ 
+    userId: { 
         type: mongoose.Types.ObjectId, 
         ref: "User", 
         required: true                       // The 'userId' field is mandatory to link content to a user
-    }],
+    },
 });
 
                                             // Creating a model for the 'Content' collection to interact with the database

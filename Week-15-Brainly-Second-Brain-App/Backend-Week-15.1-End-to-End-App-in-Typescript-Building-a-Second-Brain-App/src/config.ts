@@ -13,7 +13,10 @@ if (!process.env.MONGO_URI) {
 if (!process.env.JWT_SECRET_KEY) {
   throw new Error("Missing JWT_SECRET_KEY environment variable");
 }
+if (!process.env.PORT) {
+  throw new Error("Missing PORT environment variable");
+}
 
-export const MONGODB_URI = process.env.MONGODB_URI;
+export const PORT = process.env.PORT;
 export const JWT_SECRET = process.env.JWT_SECRET_KEY;
 export const MONGO_URI = process.env.MONGO_URI;

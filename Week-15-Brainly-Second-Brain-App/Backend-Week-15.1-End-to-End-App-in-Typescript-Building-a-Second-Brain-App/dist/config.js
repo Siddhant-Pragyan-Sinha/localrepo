@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MONGO_URI = exports.JWT_SECRET = exports.MONGODB_URI = void 0;
+exports.MONGO_URI = exports.JWT_SECRET = exports.PORT = void 0;
 // config.ts
 const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
@@ -17,6 +17,9 @@ if (!process.env.MONGO_URI) {
 if (!process.env.JWT_SECRET_KEY) {
     throw new Error("Missing JWT_SECRET_KEY environment variable");
 }
-exports.MONGODB_URI = process.env.MONGODB_URI;
+if (!process.env.PORT) {
+    throw new Error("Missing PORT environment variable");
+}
+exports.PORT = process.env.PORT;
 exports.JWT_SECRET = process.env.JWT_SECRET_KEY;
 exports.MONGO_URI = process.env.MONGO_URI;
