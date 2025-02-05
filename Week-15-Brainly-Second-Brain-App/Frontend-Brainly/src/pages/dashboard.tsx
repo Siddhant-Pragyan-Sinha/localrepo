@@ -14,7 +14,7 @@ export function Dashboard() {
   // State to manage the modal visibility
   const [modalOpen, setModalOpen] = useState(false);
   // Custom hook to fetch content and refresh the content list
-  const {contents, refresh} = useContent();
+  const { contents = [], refresh } = useContent();
 
   // useEffect hook to refresh the content whenever the modalOpen state changes
   useEffect(() => {

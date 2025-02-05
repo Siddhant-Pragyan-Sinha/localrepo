@@ -6,9 +6,11 @@ import { BACKEND_URL } from "../config"; // Importing the backend URL from confi
 export function useContent() {
     // State to hold the fetched content
     const [contents, setContents] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     // Function to refresh and fetch content from the backend
     function refresh() {
+        setLoading(true); // Set loading state to true before fetching content
         axios.get(`${BACKEND_URL}/api/v1/content`, { // Making GET request to the backend API
             headers: {
                 "Authorization": localStorage.getItem("token") // Including the token from localStorage for authentication
@@ -18,10 +20,13 @@ export function useContent() {
                 // If the request is successful, update the contents state with the fetched data
                 setContents(response.data.content);
             })
+            
             .catch((error) => {
                 // Handle any error that occurs during the request (optional)
                 console.error("Error fetching content:", error);
             });
+
+        setLoading(false); // Set loading state to false after fetching content (if no error occurred)
     }
 
     // useEffect hook to perform actions on component mount and set an interval for periodic refresh
@@ -40,5 +45,5 @@ export function useContent() {
     }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
     // Returning the contents and refresh function to be used in components that consume this hook
-    return { contents, refresh };
+    return { contents, refresh, loading };
 }
