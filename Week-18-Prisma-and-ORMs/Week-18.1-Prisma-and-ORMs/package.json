@@ -1,0 +1,28 @@
+{
+  "name": "week-18.1-prisma-and-orms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -b && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "node": "^23.7.0",
+    "prisma": "^6.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2"
+  }
+}
