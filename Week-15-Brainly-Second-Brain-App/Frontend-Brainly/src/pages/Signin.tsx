@@ -20,8 +20,9 @@ export function Signin() {
         console.log(usernameRef.current); // Log the username reference for debugging (optional)
         const password = passwordRef.current?.value; // Get the value from the password input field
 
+        try{
         // Send POST request to the backend API for signin
-        const response = await axios.post(BACKEND_URL + "/api/v1/signin", {
+        const response = await axios.post(`${BACKEND_URL}/api/v1/signin`, {
             username, // Send username as part of the request
             password  // Send password as part of the request
         });
@@ -33,6 +34,11 @@ export function Signin() {
         // Redirect to the dashboard page after successful signin
         navigate("/dashboard");
     }
+    catch(error){
+        console.error("Signin failed:", error);
+        alert("Signin failed. Check console for details."); // Display an error message to the user if signin fails
+    }
+}
 
     // JSX to render the signin form
     return (
@@ -46,7 +52,13 @@ export function Signin() {
 
                 {/* Submit button */}
                 <div className="flex justify-center pt-4">
-                    <Button onClick={signin} loading={false} variant="primary" text="Signin" fullWidth={true} />
+                    <Button 
+                    onClick={signin} 
+                    loading={false} 
+                    variant="primary" 
+                    text="Signin" 
+                    fullWidth={true} 
+                    />
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ export function useContent() {
         setLoading(true); // Set loading state to true before fetching content
         axios.get(`${BACKEND_URL}/api/v1/content`, { // Making GET request to the backend API
             headers: {
-                "Authorization": localStorage.getItem("token") // Including the token from localStorage for authentication
+                "Authorization": `Bearer ${localStorage.getItem("token")}` // Including the token from localStorage for authentication
             }
         })
             .then((response) => {

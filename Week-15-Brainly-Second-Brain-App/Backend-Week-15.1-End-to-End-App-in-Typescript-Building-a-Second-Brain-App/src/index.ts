@@ -6,10 +6,20 @@ import authRouter from "./routes/auth";
 import contentRouter from "./routes/content";
 import shareRouter from "./routes/share";
 import cors from "cors";
+import { MONGO_URI} from "./config";
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Allow requests from your frontend URL
+const corsOptions = {
+    origin: MONGO_URI, // Or your production URL
+    credentials: true
+  };
+  
+  app.use(cors(corsOptions));
 
 // Mount routes
 app.use("/api/v1/auth", authRouter);

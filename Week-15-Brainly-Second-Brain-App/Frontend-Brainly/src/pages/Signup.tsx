@@ -21,7 +21,7 @@ export function Signup() {
         const password = passwordRef.current?.value; // Get the value from the password input field
 
         // Send POST request to the backend API for signup
-        await axios.post(BACKEND_URL + "/api/v1/signup", {
+        await axios.post(`${BACKEND_URL}/api/v1/signup`, {
             username, // Send username as part of the request
             password  // Send password as part of the request
         });

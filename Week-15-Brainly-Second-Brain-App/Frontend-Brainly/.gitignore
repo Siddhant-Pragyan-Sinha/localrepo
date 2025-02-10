@@ -27,3 +27,4 @@ dist-ssr
 # Configuration files
 config.ts
 .env.production
+node_modules
