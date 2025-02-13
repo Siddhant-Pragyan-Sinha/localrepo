@@ -1,0 +1,20 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b && esbuild src/index.ts --platform=node --bundle --outdir=dist",
+    "dev": "tsc -b && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "esbuild": "^0.25.0",
+    "express": "^4.21.2",
+    "typescript": "^5.7.3"
+  }
+}
