@@ -54,7 +54,7 @@ wss.on('connection', function connection(ws, request) {
   ws.on('message', async function message(data) {
     let parsedData;
     if (typeof data !== "string") {
-      parsedData = JSON.parse(data.toString());
+      return;
     } else {
       parsedData = JSON.parse(data); // {type: "join-room", roomId: 1}
     }
